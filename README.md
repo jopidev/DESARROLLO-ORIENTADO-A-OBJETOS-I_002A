@@ -9,7 +9,7 @@ Este repositorio lo estoy usando para guardar el código de todas las pruebas de
 
 ## Lenguaje utilizado
 
-- (Aquí puedes poner el lenguaje que estás usando, por ejemplo: Java)
+- Java
 
 ## Notas
 
