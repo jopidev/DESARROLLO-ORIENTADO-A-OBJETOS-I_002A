@@ -1,17 +1,20 @@
-# Desarrollo Orientado a Objetos I - Sección 002A
+# Bank_Boston - Semana 2
 
-Este repositorio lo estoy usando para guardar el código de todas las pruebas del ramo Desarrollo Orientado a Objetos I (sección 002A). La idea es tener todo ordenado y respaldado en un solo lugar.
+Proyecto Java creado para aplicar conceptos de Herencia y Polimorfismo en el contexto de una simulación bancaria.
 
-## Contenido
+## Características
 
-- Pruebas del curso
-- Código fuente organizado por fecha o tema
+- Clase abstracta `Cuenta` con métodos sobrecargados y abstractos.
+- Subclases: `CuentaCorriente`, `CuentaAhorro`, `CuentaCredito`.
+- Clase `Cliente` con interfaz `MostrarInformacion`.
+- Uso de sobreescritura y polimorfismo.
+- Simulación básica en `Main.java`.
 
-## Lenguaje utilizado
+## Ejecución
 
-- Java
+1. Compilar: `javac src/*.java`
+2. Ejecutar: `java src/Main`
 
-## Notas
+> Requiere Java 8+ instalado en tu sistema.
 
-Este repo es solo para fines académicos y de respaldo personal. No contiene documentación ni apuntes, solo el código de las pruebas.
 
