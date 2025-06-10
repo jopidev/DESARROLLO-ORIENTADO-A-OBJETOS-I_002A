@@ -4,13 +4,23 @@ Proyecto en Java que simula la gestión de clientes y cuentas bancarias para una
 
 ## Estructura del Proyecto
 
-- `CuentaBancaria`: Clase abstracta base para todas las cuentas.
-- `CuentaCorriente`, `CuentaAhorros`, `CuentaDigital`: Subclases que extienden `CuentaBancaria` e implementan el cálculo de intereses.
-- `Cliente`: Clase que representa a un cliente del banco.
-- `InfoCliente`: Interfaz para mostrar información del cliente.
-- `GestionClientes`: Clase para asociar clientes a cuentas.
-- `OperacionesBancarias`: Permite depósitos, giros y consultas.
-- `Main`: Clase principal para ejecutar el programa y probar funcionalidades.
+Bank_Europe/
+├── src/
+│   ├── dominio_cuentas/
+│   │   ├── cuentas/
+│   │   │   ├── CuentaBancaria.java
+│   │   │   ├── CuentaCorriente.java
+│   │   │   ├── CuentaAhorros.java
+│   │   │   └── CuentaDigital.java
+│   │   └── operaciones/
+│   │       └── OperacionesBancarias.java
+│   ├── dominio_clientes/
+│   │   ├── clientes/
+│   │   │   ├── Cliente.java
+│   │   │   └── InfoCliente.java
+│   │   └── gestion/
+│   │       └── GestionClientes.java
+└── Main.java
 
 ## Paquetes
 
