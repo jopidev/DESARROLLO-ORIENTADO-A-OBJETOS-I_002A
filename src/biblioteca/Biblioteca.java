@@ -1,39 +1,58 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class Biblioteca {
-    private ArrayList<Libro> libros;
-    private HashMap<String, Usuario> usuarios;
+    private ArrayList<Libro> listaLibros;
+    private HashMap<String, Usuario> mapaUsuarios;
+    private HashSet<Libro> conjuntoLibrosUnicos;
+    private TreeSet<Libro> catalogoOrdenado;
 
     public Biblioteca() {
-        this.libros = new ArrayList<>();
-        this.usuarios = new HashMap<>();
-    }
-
-    public ArrayList<Libro> getLibros() {
-        return libros;
+        listaLibros = new ArrayList<>();
+        mapaUsuarios = new HashMap<>();
+        conjuntoLibrosUnicos = new HashSet<>();
+        catalogoOrdenado = new TreeSet<>();
     }
 
     public void agregarLibro(Libro libro) {
-        libros.add(libro);
+        if (conjuntoLibrosUnicos.add(libro)) {
+            listaLibros.add(libro);
+            catalogoOrdenado.add(libro);
+        }
     }
 
     public void agregarUsuario(Usuario usuario) {
-        usuarios.put(usuario.getRut(), usuario);
+        mapaUsuarios.putIfAbsent(usuario.getRut(), usuario);
     }
 
     public void prestarLibro(String titulo) throws LibroNoEncontradoException, LibroYaPrestadoException {
-        for (Libro libro : libros) {
+        Libro libro = buscarLibro(titulo);
+        if (libro.isPrestado()) {
+            throw new LibroYaPrestadoException("El libro ya está prestado.");
+        } else {
+            libro.setPrestado(true);
+        }
+    }
+
+    public Libro buscarLibro(String titulo) throws LibroNoEncontradoException {
+        for (Libro libro : listaLibros) {
             if (libro.getTitulo().equalsIgnoreCase(titulo)) {
-                if (libro.isPrestado()) {
-                    throw new LibroYaPrestadoException("El libro '" + titulo + "' ya está prestado.");
-                } else {
-                    libro.setPrestado(true);
-                    return;
-                }
+                return libro;
             }
         }
-        throw new LibroNoEncontradoException("No se encontró el libro con título: " + titulo);
+        throw new LibroNoEncontradoException("Libro no encontrado en el sistema.");
     }
-}
+
+    public ArrayList<Libro> getLibros() {
+        return listaLibros;
+    }
+
+    public TreeSet<Libro> getCatalogoOrdenado() {
+        return catalogoOrdenado;
+    }
+
+    public HashMap<String, Usuario> getUsuarios() {
+        return mapaUsuarios;
+    }
+} 
+
 

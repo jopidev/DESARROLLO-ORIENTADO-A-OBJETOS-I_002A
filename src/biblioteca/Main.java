@@ -34,7 +34,7 @@ public class Main {
                 if (validarRutChileno(rut)) {
                     break;
                 } else {
-                    System.out.println("Formato de RUT inválido. Intente nuevamente.");
+                    System.out.println("Formato de RUT inv\u00e1lido. Intente nuevamente.");
                 }
             }
 
@@ -42,12 +42,12 @@ public class Main {
             biblioteca.agregarUsuario(usuario);
             System.out.println("\nUsuario registrado exitosamente.\n");
 
-            mostrarCatalogoLibros(biblioteca);
+            mostrarCatalogoOrdenado(biblioteca);
 
             boolean continuar = true;
             while (continuar) {
-                System.out.println("PRÉSTAMO DE LIBROS");
-                System.out.print("Ingrese el título del libro a buscar y prestar: ");
+                System.out.println("PR\u00c9STAMO DE LIBROS");
+                System.out.print("Ingrese el t\u00edtulo del libro a buscar y prestar: ");
                 String titulo = scanner.nextLine();
 
                 try {
@@ -57,7 +57,7 @@ public class Main {
                     try (FileWriter fw = new FileWriter("prestamos.txt", true)) {
                         fw.write("Libro prestado: " + titulo + " a " + nombre + " (RUT: " + rut + ")\n");
                     } catch (IOException e) {
-                        System.out.println("No se pudo guardar el préstamo en archivo.");
+                        System.out.println("No se pudo guardar el pr\u00e9stamo en archivo.");
                     }
 
                     mostrarResumenFinal(nombre, rut, titulo);
@@ -66,12 +66,12 @@ public class Main {
                     System.out.println(e.getMessage());
                 }
 
-                System.out.print("¿Desea prestar otro libro? (S/N): ");
+                System.out.print("\u00bfDesea prestar otro libro? (S/N): ");
                 String respuesta = scanner.nextLine().trim().toUpperCase();
                 if (!respuesta.equals("S")) {
                     continuar = false;
                 } else {
-                    mostrarCatalogoLibros(biblioteca);
+                    mostrarCatalogoOrdenado(biblioteca);
                 }
             }
 
@@ -91,29 +91,29 @@ public class Main {
 
     public static void mostrarEncabezado() {
         System.out.println("===============================================");
-        System.out.println("  SISTEMA DE ADMINISTRACIÓN DE BIBLIOTECA");
+        System.out.println("  SISTEMA DE ADMINISTRACI\u00d3N DE BIBLIOTECA");
         System.out.println("               DUOC UC - JAVA");
         System.out.println("===============================================\n");
     }
 
-    public static void mostrarCatalogoLibros(Biblioteca biblioteca) {
-        System.out.println("CATÁLOGO DE LIBROS DISPONIBLES:");
-        System.out.println("--------------------------------");
-        if (biblioteca.getLibros().isEmpty()) {
+    public static void mostrarCatalogoOrdenado(Biblioteca biblioteca) {
+        System.out.println("CAT\u00c1LOGO ORDENADO DE LIBROS DISPONIBLES:");
+        System.out.println("-------------------------------------------");
+        if (biblioteca.getCatalogoOrdenado().isEmpty()) {
             System.out.println("No hay libros disponibles.");
         } else {
-            for (Libro libro : biblioteca.getLibros()) {
+            for (Libro libro : biblioteca.getCatalogoOrdenado()) {
                 String estado = libro.isPrestado() ? "Prestado" : "Disponible";
-                System.out.printf("Título: %s | Autor: %s | Estado: %s\n",
+                System.out.printf("T\u00edtulo: %s | Autor: %s | Estado: %s\n",
                                   libro.getTitulo(), libro.getAutor(), estado);
             }
         }
-        System.out.println("--------------------------------\n");
+        System.out.println("-------------------------------------------\n");
     }
 
     public static void mostrarResumenFinal(String nombre, String rut, String tituloLibro) {
         System.out.println("===============================================");
-        System.out.println("               RESUMEN DEL PRÉSTAMO");
+        System.out.println("               RESUMEN DEL PR\u00c9STAMO");
         System.out.println("Usuario: " + nombre);
         System.out.println("RUT: " + rut);
         System.out.println("Libro prestado: " + tituloLibro);
@@ -121,6 +121,7 @@ public class Main {
         System.out.println("===============================================\n");
     }
 }
+
 
 
 
