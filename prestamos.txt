@@ -1,3 +1,4 @@
 Libro prestado: el alquimista a Jorge Pinto (RUT: 12345678-9)
 Libro prestado: el alquimista a jorge pinto (RUT: 12345678-9)
 Libro prestado: ulises a Jorge PInto (RUT: 12345678-9)
+Libro prestado: ulises a jorge Pinto (RUT: 12345678-9)
