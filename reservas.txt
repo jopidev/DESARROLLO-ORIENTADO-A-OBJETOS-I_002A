@@ -1,0 +1,10 @@
+Comic: Batman Año Uno | Usuario: Javier Rojas | RUT: 12345678-5
+Comic: Watchmen | Usuario: Camila Soto | RUT: 98765432-1
+Comic: Saga Volumen 1 | Usuario: Diego Pérez | RUT: 11222333-K
+Comic: Naruto #1 | Usuario: Laura Gómez | RUT: 77889900-4
+Comic: Iron Man: Extremis | Usuario: Martín Rivera | RUT: 66554433-2
+Comic: Watchmen | Usuario: jorge pinto | RUT: 12345678-9
+Comic: Akira Volumen 1 | Usuario: Jorge Pinto | RUT: 12345678-9
+Comic: X-Men #25 | Usuario: Jorge Pinto | RUT: 12345678-9
+Comic: X-Men #25 | Usuario: Jorge PINTO | RUT: 12345678-9
+Comic: X-Men #25 | Usuario: Jorge Pinto | RUT: 12345678-9

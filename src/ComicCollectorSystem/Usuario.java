@@ -1,3 +1,4 @@
+package src.ComicCollectorSystem;
 public class Usuario {
     private String nombre;
     private String rut;
@@ -15,4 +16,5 @@ public class Usuario {
         return rut;
     }
 }
+
 
