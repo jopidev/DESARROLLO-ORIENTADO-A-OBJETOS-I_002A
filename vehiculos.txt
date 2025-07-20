@@ -1,0 +1,8 @@
+Carga;AB1234;Volvo;FH16;10;15000
+Pasajeros;CD5678;Mercedes;Sprinter;5;15
+Carga;EF9012;Scania;R500;8;12000
+Pasajeros;GH3456;Toyota;Coaster;12;30
+Carga;IJ7890;MAN;TGX;7;18000
+Pasajeros;KL2345;Volkswagen;Crafter;3;20
+
+
